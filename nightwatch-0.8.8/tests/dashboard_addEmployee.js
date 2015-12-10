@@ -13,8 +13,6 @@ module.exports = {
 			.addEmployee('Mike','Smith','')
 			.assert.containsText('@benefitCost', '38.46', 'no dependents no discount benefitCost verified')
 			.assert.containsText('@netPay', '1961.54', 'no dependents no discount netPay verified')
-			.deleteEmployee()
-			.expect.element('//*td[2]').text.to.not.contain('Zack')
 	},
 
 		'addEmployeeNoDependentWithDiscount' : function (client) {
@@ -40,7 +38,6 @@ module.exports = {
 			.addEmployee('Alan','Avery','1')
 			.assert.containsText('@benefitCost', '51.92', 'one dependent with discount benefitCost verified')
 			.assert.containsText('@netPay', '1948.08', 'one dependent with discount netPay verified')
-			.deleteEmployee()
 	},
 
 };
